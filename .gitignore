@@ -16,7 +16,7 @@ target/
 *.war
 *.nar
 *.ear
-#*.zip #documentacao
+#*.zip #documentation
 *.tar.gz
 *.rar
 
@@ -32,6 +32,8 @@ local.properties
 .loadpath
 .recommenders
 Thumbs.db
+.classpath
+.project
 
 # External tool builders
 .externalToolBuilders/
