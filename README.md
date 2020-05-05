@@ -39,7 +39,7 @@ final result will be a value between 2 and 24
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For available versions, see the [tags of this repositóry](https://github.com/coppolaop/RPGDiceRoller/tags). 
+We use [SemVer](http://semver.org/) for versioning. For available versions, see the [tags of this repository](https://github.com/coppolaop/RPGDiceRoller/tags). 
 
 ## Creator
 
@@ -55,4 +55,4 @@ We use [SemVer](http://semver.org/) for versioning. For available versions, see 
 
 ## License
 
-This project is licensed under the Apache-2.0 license - see [LICENSE.md] (LICENSE) for more details.
+This project is licensed under the Apache-2.0 license - see [LICENSE.md](LICENSE) for more details.
