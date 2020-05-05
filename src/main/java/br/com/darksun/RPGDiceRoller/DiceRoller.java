@@ -6,8 +6,8 @@ import java.util.regex.Pattern;
 
 public class DiceRoller
 {
-	static Pattern patExpression = Pattern.compile( "([+-]?[0-9]+([Dd][0-9]+)?)(([+-][0-9]+([Dd][0-9]+)?)*)" );
-	static Pattern patDice = Pattern.compile( "([+-]*[0-9]+[Dd]?[0-9]*)" );
+	static Pattern patExpression = Pattern.compile( "([+-]?[0-9]*[Dd]?[0-9]+)(([+-][0-9]*[Dd]?[0-9]+)*)" );
+	static Pattern patDice = Pattern.compile( "([+-]?[0-9]*[Dd]?[0-9]+)" );
 
 	public static Integer roll( String rollExpression )
 	{
@@ -26,19 +26,21 @@ public class DiceRoller
 				if ( dice.startsWith( "-" ) )
 				{
 					dice = dice.replaceAll( "-", "" );
-					if(dice.contains( "D" ) || dice.contains( "d" ))
+					if ( dice.contains( "D" ) || dice.contains( "d" ) )
 					{
-						resultado -= rollDice(dice);
-					} else {
+						resultado -= rollDice( dice );
+					} else
+					{
 						resultado -= Integer.parseInt( dice );
 					}
 				} else
 				{
 					dice = dice.replaceAll( "//+", "" );
-					if(dice.contains( "D" ) || dice.contains( "d" ))
+					if ( dice.contains( "D" ) || dice.contains( "d" ) )
 					{
-						resultado += rollDice(dice);
-					} else {
+						resultado += rollDice( dice );
+					} else
+					{
 						resultado += Integer.parseInt( dice );
 					}
 				}
@@ -55,8 +57,18 @@ public class DiceRoller
 	{
 		Integer result = 0;
 		String[ ] values = dice.split( "[Dd]" );
-		Integer quantity = Integer.parseInt( values[0] );
-		Integer size = Integer.parseInt( values[1] );
+		Integer quantity = 0;
+		Integer size = 0;
+
+		if ( values[0].equals( "" ) )
+		{
+			quantity = 1;
+		} else
+		{
+			quantity = Integer.parseInt( values[0] );
+		}
+
+		size = Integer.parseInt( values[1] );
 
 		for ( int i = 0; i < quantity; i++ )
 		{
